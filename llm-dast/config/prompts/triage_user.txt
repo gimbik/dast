@@ -1,0 +1,20 @@
+Triage the following OWASP ZAP alert.
+
+ALERT:
+- Name: {{ alert.name }}
+- Risk: {{ alert.riskdesc }}
+- Description: {{ alert.desc }}
+- URL: {{ alert.url }}
+- Matched Evidence: {{ alert.evidence }}
+- Attack vector used: {{ alert.attack }}
+
+HTTP REQUEST HEADER:
+{{ alert.request_header if alert.request_header else 'N/A' }}
+
+HTTP RESPONSE HEADER:
+{{ alert.response_header if alert.response_header else 'N/A' }}
+
+HTTP RESPONSE BODY (truncated to 1500 chars):
+{{ alert.response_body[:1500] if alert.response_body else 'N/A' }}
+
+Return ONLY the JSON object described in the schema.

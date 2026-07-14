@@ -1,0 +1,29 @@
+target:
+  url: "http://demo.testfire.net"
+  context_name: "default"
+
+zap:
+  host: "127.0.0.1"
+  port: 8080
+  api_key: "12345"
+  scan:
+    spider: true
+    ajax_spider: false # Отключим пока Ajax, чтобы тесты были быстрее
+    active_scan: true
+    max_duration_minutes: 5
+
+auth:
+  enabled: true
+  login_url: "http://demo.testfire.net/login.jsp"
+  username: "admin"
+  password: "admin"
+  username_field: "uid"
+  password_field: "passw"
+  logged_in_indicator: "Sign Off" # Текст, который появляется после успешного логина
+
+llm:
+  provider: "ollama"
+  base_url: "http://localhost:11434"
+  model: "llama3.1:8b"
+  temperature: 0.1
+  json_mode: true
